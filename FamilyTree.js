@@ -56,7 +56,7 @@ export default class FamilyTree {
       member.details = { ...member.details, ...updatedDetails.details };
     }
   
-    // Get all descendants of a given member using a recursive traversal
+    // Get all descendants of a given member
     getDescendants(name) {
       const member = this.members[name];
       if (!member) {
@@ -65,7 +65,7 @@ export default class FamilyTree {
       }
       const descendants = [];
 
-      // Helper function to perform a recursive depth-first search
+      // Helper function (depth-first search)
       function traverse(person) {
         for (let child of person.children) {
           descendants.push(child);
